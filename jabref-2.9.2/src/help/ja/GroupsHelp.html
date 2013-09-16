@@ -1,0 +1,209 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="jabref_help.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+<h1>グループ</h1>
+
+    <p>グループを用いると、ディスク上のファイルをディレクトリやサブディレクトリを使って整理するように、BibTeXデータベースをツリー状に構造化することができます。ファイルツリーと違うところは、大きく2つあります。</p>
+
+    <ul>
+        <li>ファイルは、常に唯一のディレクトリ内に属しますが、項目は二つ以上のグループに属することができます。</li>
+
+        <li>グループは、特定の基準を設けて内容を動的に制御することができます。これらの基準に一致する新規項目は、自動的にグループに加えられます。このような機能は、通常のファイルシステムにはありませんが、電子メールクライアントの中には、同様の機能を持つものがあります(ThunderbirdやOperaなど)。</li>
+    </ul>
+
+    <p>グループを選択すると、当該グループに属する項目が表示されます。複数のグループを選択すると、現在の設定の状態によって、どれかのグループに属する項目が表示されるか(和集合)、すべてのグループに属する項目が表示されます(積集合)。これらはすべて下記に詳細に説明します。</p>
+
+    <p>グループの定義はデータベース毎に為されます。これは、<tt>.bib</tt>ファイル内の<tt>@COMMENT</tt>ブロックに保存され、全ユーザーに共有されます(将来のJabRefではユーザー毎のグループがサポートされるかもしれません)。</p>
+
+    <h2>制御盤</h2>
+
+    <p>グループ制御盤は、画面左側のサイド・ペーンに表示されます。<tt>CTRL-SHIFT-G</tt>を押すか、ツールバーのグループボタンを押すことで入切することができます。制御盤にはいくつかのボタンがありますが、ほとんどの機能はコンテクストメニュー(「右クリック」)でもアクセスできます。ドラッグ&amp;ドロップもサポートされています。</p>
+
+    <table cellspacing="0"
+           cellpadding="5"
+           border="0"
+           style="background-color: #C0FFC0"
+		   summary="Examples">
+        <tr>
+            <td>
+                <h2>いくつかの簡単な例</h2>
+
+                <p>わたしは...</p>
+
+                <h3>...グループを作成して、いくつかの項目を割り当てたいのです</h3>
+
+                <p>グループ制御盤が表示されていることを確認します。<b>新規グループ</b>ボタンを押し、新しいグループの名称を入力、他の値はすべて既定値にしたままで<b>OK</b>ボタンを押します。そのグループに所属させたい項目群を選択して、そのグループへドラッグ&amp;ドロップするか、コンテクストメニュー中の<b>グループに追加</b>オプションを選択します。最後に、そのグループを選択して、内容を表示させます(いま所属させた項目が表示されるはずです)。</p>
+
+                <h3>...<tt>keywords</tt>フィールドを使用して項目をグループ分けしたいのです</h3>
+
+                <p>グループ制御盤が表示されていることを確認します。<b>新規グループ</b>ボタンを押し、新しいグループの名称を入力、オプションを「フィールド中のキーワードを検索して動的にグループ化」に設定します。検索するキーワードを入力して<b>OK</b>ボタンを押します。最後に、そのグループを選択して、内容を表示させます(<tt>keywords</tt>フィールドに指定したキーワードが入っている項目すべてが表示されるはずです)。</p>
+
+                <h3>...自由型検索表現を使ってグループを定義したいのです</h3>
+
+                <p>グループ制御盤が表示されていることを確認します。<b>新規グループ</b>ボタンを押し、新しいグループの名称を入力、オプションを「自由型検索表現で動的にグループ化」に設定します。「検索表現」に<tt>author=smith</tt>のように入力し(<tt>smith</tt>はデータベース中の実際の名前に置き換えてください)、<b>OK</b>ボタンを押します。最後に、そのグループを選択して、内容を表示させます(<tt>author</tt>フィールドに指定した名前が入っている項目すべてが表示されるはずです)。</p>
+
+                <h3>...複数のグループを連結したいのです</h3>
+
+                <p>上述の方法などを使って、2つのグループを作成します。<b>設定</b>ボタンを押して、<b>論理和</b>が選択されていることを確認します。それから2つのグループを選択します。2つのグループのうちどちらかに属している項目がすべて表示されます。<b>設定</b>をもう一度押し、<b>論理積</b>を選択します。すると、両方のグループの属している項目のみが表示されます(全く表示されないかもしれませんし、両方のグループが同じ項目を含んでいる場合には全く同じ項目が表示されます)。</p>
+
+                <h3>...重複のあるグループを識別したいのです</h3>
+
+                <p>JabRefでは、現在選択しているグループと重複部分があるグループ(すなわち、そのうち少なくとも1つの項目が現在選択しているグループにも含まれているもの)を簡単に見つけることができます。<b>設定</b>を押して、「重複のあるグループを着色」オプションを有効にします。そして、他のグループと重複しているグループを選択すると、他のグループの方が着色されます。</p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>グループの型</h2>
+
+    <p>JabRefには、以下の4つのグループ型があります。</p>
+
+    <ol>
+        <li><b>全項目</b>グループは、名称が示すとおり、全ての項目を含んでいて、常に存在し、編集したり削除したりすることはできません。</li>
+
+        <li><b>静的グループ</b>は、ディスク上のディレクトリと同様の働きを示し、明示的に割り当てた項目のみを含みます。</li>
+
+        <li><b>キーワード検索に基づく動的グループ</b>には、特定のBibTeXフィールド(例えば<tt>keywords</tt>)に特定のキーワード(例えば<tt>electrical</tt>)が含まれる項目が含まれます。この方法では、項目を手動で割り当てる必要はなく、データベースに既存の情報を使用します。もしデータベース中の全ての項目が、<tt>keywords</tt>フィールドに適切なキーワードが収録されているならば、このグループ型を用いるのがもっとも良い方法でしょう。</li>
+
+        <li><b>自由型検索表現に基づく動的グループ</b>には、指定した検索表現に一致する項目が含まれます。検索表現は、サイド・ペーンの<a href="SearchHelp.html">検索パネル</a>と同一の文法を用います。この<a href="SearchHelp.html#advanced">文法</a>は、論理演算子(<tt>AND</tt>・<tt>OR</tt>・<tt>NOT</tt>)をサポートし、検索対象として1つ以上のBibTeXフィールドを指定することができるので、キーワード検索よりも柔軟なグループ定義を行うことができます(例：<tt>author=smith and title=electrical</tt>)。</li>
+    </ol>
+    <p>作成したグループは、上記の後ろ3つの型のいずれかになります。グループをダブルクリックして現れるグループ編集ダイアログでは、選択もしくは編集したグループの定義の説明が、簡便な言葉で表示されます。</p>
+
+
+    <h2>グループの構造およびグループの作成と削除</h2>
+
+    <p>ディレクトリと同様に、グループはツリー状に体系化することができます。この時、<b>全項目</b>グループがルート(ツリーの起点)になります。グループを右クリックすれば、選択したグループと同じ階層かそれよりも下層に、新しいグループを追加することができます。<b>新規グループ</b>ボタンを押せば、現在選択されているグループの状態に関わらず、<b>全項目</b>グループ配下に、新しい下層グループを加えることができます。コンテキストメニューを使えば、グループや下層グループを削除したり、下層グループをアルファベット順に整序したり、グループをツリー内の別の場所に移動したりすることができます。後者は、ドラッグ&amp;ドロップでも行えるようになっていますが、グループ内の下層グループの順序を変更することはサポートされません。</p>
+
+    <p>取り消しと再実行は、編集全てにおいてサポートされています。</p>
+
+    <h3>静的グループ</h3>
+
+    <p>静的グループは、項目を明示的に割り当てることによってのみ、作成することができます。静的グループを作成した後、それに割り当てる項目を選択し、ドラッグ&amp;ドロップか主要表のコンテクストメニューを用いて割り当てを行ってください。静的グループから項目を削除するには、項目を選択して、主要表のコンテクストメニューを使ってください。設定できるオプションはありません。</p>
+
+    <p>このグループ化法は、全項目が一意的なBibTeX鍵を持っていることを前提としています。BibTeX鍵の欠損や重複がある場合は、それらの項目を割り当てても、後のセッションで正しく呼び出されません。</p>
+
+    <h3>動的グループ</h3>
+
+    <p>動的グループの中身は、論理条件によって定義されます。この条件に合致する項目のみがグループに含まれることになります。この方法は、データベース自身に含まれる情報を用い、データベースが変更されると、常に動的に更新されます。</p>
+
+    <p>下記の2つの条件型を使用することができます。</p>
+
+    <dl>
+        <dt><b>フィールド中のキーワードを検索</b></dt>
+
+        <dd>この方法は、特定のBibTeXフィールド(例えば<tt>keywords</tt>)に、特定の検索語(例えば<tt>electrical</tt>)が含まれる項目をグループ化します。当然ながら、この方法が機能するためには、すべての項目にグループ化用フィールドが存在しているとともに、その内容が正確でなくてはなりません。上記の用例を用いると、electricalに関係する全ての項目をグループ化することになります。あるいは、<tt>author</tt>フィールドを使用すると、著者毎にグループ化することができます。検索は、平文でも正規表現でも行うことができます。前者の場合は、グループ化用フィールドの内容に、手動で検索語を追加したり削除したりするだけで、項目を追加したり削除したりすることができます。この方法は、<tt>keywords</tt>フィールドや他の自己定義フィールドでは意味を成しますが、<tt>author</tt>や<tt>year</tt>のようなフィールドでは、明らかに意味を成しません。</dd>
+
+        <dt><b>自由型検索表現を使用</b></dt>
+
+        <dd>これは上記と同様ですが、単独フィールドを単独検索語で検索するのではなく、<a href="SearchHelp.html#advanced">検索表現文法</a>を使用することができます。これは、論理演算子(<tt>AND</tt>・<tt>OR</tt>・<tt>NOT</tt>)をサポートし、複数のBibTeXフィールドを検索することができます。例えば、<tt>keywords=regression and not keywords=linear</tt>という検索表現は、非線形回帰に関係した項目をグループ化します。</dd>
+    </dl>
+
+    <p>グループ表示において、動的グループは、既定値で<i>イタリック体</i>で表示されます。この表示は、設定(オプション→設定→グループ→「動的グループをイタリック体で表示」チェックボックス)で、止めることができます。</p>
+
+    <h3>Hierarchical context</h3>
+
+    <p>By default, a group is
+    <b>independent</b> of its position in the groups tree: When
+    selected, only the group's contents are shown. However,
+    especially when using dynamic groups, it is often useful to
+    define a subgroup that <b>refines its supergroup</b>, i.e.,
+    when selected, entries contained in both groups are displayed.
+    For example, create a supergroup containing entries with the
+    keyword <tt>distribution</tt> and a subgroup containing entries
+    with the keyword <tt>gauss</tt> that refines this supergroup.
+    Selecting the subgroup now displays entries that match both
+    conditions, i.e. are concerned with Gaussian distributions. By
+    adding another refining subgroup for <tt>laplace</tt> to the
+    original supergroup, the grouping can easily be extended. In
+    the groups tree, refining groups have a special icon (this can
+    be turned off in the preferences).</p>
+
+    <p>The logical complement to a refining group is a group that
+    <b>includes its subgroups</b>, i.e. when selected, not only the
+    group's own entries, but also its subgroups' entries are shown.
+    In the groups tree, this type of group has a special icon (this
+    can be turned off in the preferences).</p>
+
+    <h2>Viewing a group's entries, combining multiple
+    groups</h2>
+
+    <p>Selecting a group shows the entries contained in
+    that group by highlighting them and, depending on the settings
+    (accessible by clicking the <b>Settings</b> button), moving
+    them to the top of the list and/or selecting them. These
+    options are identical to those available for the regular
+    search.</p>
+
+    <p>When multiple groups are selected, either the union or the
+    intersection of their content is shown, depending on the
+    current settings. This allows to quickly combine multiple
+    conditions, e.g. if you have a static group <tt>Extremely
+    Important</tt> to which you assign all extremely important
+    entries, you can view the extremely important entries in any
+    other group by selecting both groups (this requires to have
+    <b>Intersection</b> selected in the settings).</p>
+
+    <h2>Groups and searching</h2>
+
+    <p>When viewing the contents of the
+    selected group(s), a search can be performed within these
+    contents using the regular search facility.</p>
+
+    <h2>Highlighting overlapping groups</h2>
+
+    <p>The <b>Settings</b>
+    button offers an option to highlight overlapping groups. If
+    this is activated, upon selection of one or more groups, all
+    groups that contain at least one of the entries contained in
+    the currently selected group(s) are highlighted. This quickly
+    identifies overlap between the groups' contents. You might, for
+    example, create a group <tt>To Read</tt> that contains all
+    entries which you plan to read. Now, whenever you select any
+    group, the group <tt>To Read</tt> is highlighted if the
+    selected group contains entries that you plan to read.</p>
+
+    <h2>Advanced features</h2>
+
+    <p>After mastering the grouping concepts
+    described above, the following advanced features might come in
+    handy.</p>
+
+    <h3>Automatically creating dynamic groups</h3>
+
+    <p>By clicking the
+    <b>Automatically create groups for database</b> button, you can
+    quickly create a set of groups appropriate for your database.
+    This feature will gather all words found in a specific field of
+    your choice, and create a group for each word. This is useful
+    for instance if your database contains suitable keywords for
+    all entries. By autogenerating groups based on the
+    <tt>keywords</tt> field, you should have a basic set of groups
+    at no cost.</p>
+
+    <p>You can also specify characters to ignore, for instance
+    commas used between keywords. These will be treated as
+    separators between words, and not part of them. This step is
+    important for combined keywords such as <tt>laplace
+    distribution</tt> to be recognized as a single semantic unit.
+    (You cannot use this option to remove complete words. Instead,
+    delete the unwanted groups manually after they were created
+    automatically.)</p>
+
+    <h3>Refreshing the groups view</h3>
+
+    <p>The <b>Refresh</b> button
+    updates the entry table to reflect the current groups
+    selection. This is usually done automatically, but in rare
+    occasions (e.g. after a group-related undo/redo) a manual
+    refresh is required.</p>
+
+    <h3>Mixing refining groups with including groups</h3>
+
+    <p>If a refining group is a subgroup of a group that includes its
+    subgroups -- the refining group's siblings --, these siblings
+    are ignored when the refining group is selected.</p>
+</body>
+</html>
