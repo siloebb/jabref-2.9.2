@@ -74,7 +74,7 @@ Para compilar e executar o projeto, execute a task <b>run</b> deste build file.
 <img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-ant-03.PNG" />
 
 
-Requisições de Mudança - Primeira Fase
+Requisições de Mudança - Fase 01
 ===================================================
 
 Durante a primeira fase de requisições de mudança, todas as alterações deverão ser comitadas dentro do branch
