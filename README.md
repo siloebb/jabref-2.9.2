@@ -74,6 +74,42 @@ Para compilar e executar o projeto, execute a task <b>run</b> deste build file.
 <img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-ant-03.PNG" />
 
 
+Requisições de Mudança - Primeira Fase
+===================================================
+
+Durante a primeira fase de requisições de mudança, todas as alterações deverão ser comitadas dentro do branch
+<b>phase-01</b>. Qualquer commit realizado em outro branch, para esta fase, implicará na invalidação da nota do grupo
+para esta fase. Atentem para o fato de que cada commit é identificado com o login do respectivo desenvolvedor.
 
 
+<ul>
+	<li><b>Mudança 01:</b> Incluir nome de cada membro da equipe na tela "Ajuda > Sobre JabRef", dentro da seção 
+	"Contributions from".</li>
+	
+	<li><b>Mudança 02:</b> Utilizar por padrão um único tema para a aplicação em todas as plataformas possíveis  
+	(Windows, Linux ou Mac), ao invés de utilizar o tema padrão do sistema operacional</li>
+	
+	<li><b>Mudança 03:</b> Alterar o esquema de cores do menu Editar > Marcar cor específica, de modo que as 
+	cores padrão exibidas neste submenu correspondam às cores abaixo (em hexadecimal), nesta ordem:
 
+	<ul>
+		<li>#F3E778</li>
+		<li>#F1E6AF</li>
+		<li>#F4BC7B</li>
+		<li>#D96842</li>
+		<li>#D83E3E</li>
+	</ul>
+
+	Verificar se, por algum motivo, as cores anteriores estão gravadas em algum arquivo de configuração, 
+	ou no registro do sistema operacional. Neste caso, limpe tais informações antes de testar.</li>
+	
+	<li><b>Mudança 04:</b> Altere a tecla de atalho do ítem de menu "Arquivo > Fechar base de dados" de 
+	"Ctrl+W" para "Ctrl+Shift+W".</li>
+	
+	<li><b>Mudança 05:</b> Modifique a tela de conexão com o banco de dados de modo que, ao selecionar o 
+	tipo de servidor MySQL, o usuário seja "<b>root</b>", e ao selecionar o tipo PostgreSQL, o usuário 
+	seja "<b>postgres</b>".</li>
+	
+	<li><b>Mudança 06:</b> Na tela de edição de entradas Bibtex, para a aba de edição do código 
+	fonte bibtex, altere a tabulação: ao invés de dois espaços em branco, utilize o caractere de tabulação</li>
+</ul>
