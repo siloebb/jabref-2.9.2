@@ -2,3 +2,114 @@ jabref-2.9.2
 ============
 
 Manutenção e Evolução de software sobre o código fonte do JabRef versão 2.9.2, com base no  material de Rajlich
+
+
+Abrindo o projeto no Eclipse
+================================================
+
+1 - Para as alterações realizadas neste repositório, a versão do <b>Eclipse</b> a ser utilizada será a 4.3 
+(<b>Eclipse Kepler</b>), que pode ser baixada para os sistemas operacionais Windows, Linux e Mac neste link:
+
+http://www.eclipse.org/downloads/
+
+2 - Também é necessário instalar o cliente de controle de versão <b>GIT</b>, que pode ser baixado neste endereço:
+
+http://git-scm.com/
+
+3 - Tendo instalado o Eclipse Kepler e o GIT, abra o Eclipse, na perspectiva "<i>Git Repository Exploring</i>". Clique no 
+botão "<i>Clone a Git Repository and add the clone to this view</i>". 
+
+<img src="http://docs.joomla.org/images/b/bd/Git-coders-tutorial-20121009-01.png" />
+
+No campo URI, cole o endereço deste repositório:
+
+https://github.com/sfohart/jabref-2.9.2.git
+
+Clicando em "next", você poderá ver todos os branches disponíveis neste repositório. Neste caso, os seguintes branches estarão 
+disponíveis:
+
+<ul>
+	<li>master</li>
+	<li>phase-01</li>
+</ul>
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/branch-selection.PNG" />
+
+Clicando mais uma vez em "next", você poderá configurar em qual diretório o Eclipse clonará o repositório git.
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/local-destination.PNG" />
+
+É recomendável que você deixe a configuração como está. Clique em "Finish" e o Eclipse fará o download dos 
+arquivos deste repositório para o seu computador.
+
+4 - Crie um branch local de nome "phase-01" 
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/criando-branch-local.png" />
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/criando-branch-local-phase-01.png" />
+
+5 - Expanda o diretório de trabalho, clique com o botão direito do mouse na pasta "<b>jabref-2.9.2</b>" e selecione
+a opção <b>Import Projects...</b>. Clique em "next" e, depois, em "finish"
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/import-projects.png" />
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/import-projects-01.png" />
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/import-projects-02.png" />
+
+6 - Abra a visão do <b>Ant</b>, clicando em Window > Show View > Ant
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-ant.png" />
+
+Clique no botão <b>Add buildfiles</b>
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-ant-01.png" />
+
+Selecione o arquivo <b>build.xml</b> e clique no botão <b>OK</b>
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-ant-02.png" />
+
+Para compilar e executar o projeto, execute a task <b>run</b> deste build file.
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-ant-03.PNG" />
+
+
+Requisições de Mudança - Primeira Fase
+===================================================
+
+Durante a primeira fase de requisições de mudança, todas as alterações deverão ser comitadas dentro do branch
+<b>phase-01</b>. Qualquer commit realizado em outro branch, para esta fase, implicará na invalidação da nota do grupo
+para esta fase. Atentem para o fato de que cada commit é identificado com o login do respectivo desenvolvedor.
+
+
+<ul>
+	<li><b>Mudança 01:</b> Incluir nome de cada membro da equipe na tela "Ajuda > Sobre JabRef", dentro da seção 
+	"Contributions from".</li>
+	
+	<li><b>Mudança 02:</b> Utilizar por padrão um único tema para a aplicação em todas as plataformas possíveis  
+	(Windows, Linux ou Mac), ao invés de utilizar o tema padrão do sistema operacional</li>
+	
+	<li><b>Mudança 03:</b> Alterar o esquema de cores do menu Editar > Marcar cor específica, de modo que as 
+	cores padrão exibidas neste submenu correspondam às cores abaixo (em hexadecimal), nesta ordem:
+
+	<ul>
+		<li>#F3E778</li>
+		<li>#F1E6AF</li>
+		<li>#F4BC7B</li>
+		<li>#D96842</li>
+		<li>#D83E3E</li>
+	</ul>
+
+	Verificar se, por algum motivo, as cores anteriores estão gravadas em algum arquivo de configuração, 
+	ou no registro do sistema operacional. Neste caso, limpe tais informações antes de testar.</li>
+	
+	<li><b>Mudança 04:</b> Altere a tecla de atalho do ítem de menu "Arquivo > Fechar base de dados" de 
+	"Ctrl+W" para "Ctrl+Shift+W".</li>
+	
+	<li><b>Mudança 05:</b> Modifique a tela de conexão com o banco de dados de modo que, ao selecionar o 
+	tipo de servidor MySQL, o usuário seja "<b>root</b>", e ao selecionar o tipo PostgreSQL, o usuário 
+	seja "<b>postgres</b>".</li>
+	
+	<li><b>Mudança 06:</b> Na tela de edição de entradas Bibtex, para a aba de edição do código 
+	fonte bibtex, altere a tabulação: ao invés de dois espaços em branco, utilize o caractere de tabulação</li>
+</ul>
