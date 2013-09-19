@@ -48,6 +48,20 @@ arquivos deste repositório para o seu computador.
 
 <img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/criando-branch-local-phase-01.png" />
 
+Ainda na aba <i>Git Repository Exploring</i>, visualize os branchs locais. Na aba <i>Properties</i> você 
+verá as configurações para o branch remoto
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-push-01.PNG" />
+
+Selecione o branch recém criado <i>phase-01</i> lique no botão Edit
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-push-03.PNG" />
+
+Configure para o branch remoto respectivo, como na imagem abaixo
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-push-02.PNG" />
+
+
 5 - Expanda o diretório de trabalho, clique com o botão direito do mouse na pasta "<b>jabref-2.9.2</b>" e selecione
 a opção <b>Import Projects...</b>. Clique em "next" e, depois, em "finish"
 
@@ -143,7 +157,8 @@ repositório remoto (GitHub). Para isso, clique com o botão direito do mouse no
 <img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes-04.png" />
 
 5 - Em "Source ref", selecione o branch local phase-01. Em "Destination ref", selecione o branch remoto "phase-01".
-Clique em "Add Spec". Feito isso, clique em "next".
+Clique em "Add Spec". Feito isso, clique em "next". Caso a listagem já exiba configuração semelhante, 
+este passo não é necessário.
 
 <img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes-05.png" />
 
