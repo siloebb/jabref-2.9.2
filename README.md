@@ -74,7 +74,7 @@ Para compilar e executar o projeto, execute a task <b>run</b> deste build file.
 <img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/configurando-ant-03.PNG" />
 
 
-Requisições de Mudança - Primeira Fase
+Requisições de Mudança - Fase 01
 ===================================================
 
 Durante a primeira fase de requisições de mudança, todas as alterações deverão ser comitadas dentro do branch
@@ -113,3 +113,79 @@ para esta fase. Atentem para o fato de que cada commit é identificado com o log
 	<li><b>Mudança 06:</b> Na tela de edição de entradas Bibtex, para a aba de edição do código 
 	fonte bibtex, altere a tabulação: ao invés de dois espaços em branco, utilize o caractere de tabulação</li>
 </ul>
+
+Commitando alterações
+===================================================
+
+1 - Adicione todos os arquivos ao índice local do git, clicando com o botão direito do mouse no projeto, e 
+selecionando "Team > Add to Index"
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes.png" />
+
+2 - Efetue o commit das suas alterações, realizando os devidos comentários. Para isso, clique com o botão direito
+do mouse no projeto e selecione "Team > Commit...". Isso é importante para a rastreabilidade das modificações 
+no código fonte. 
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes-01.png" />
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes-02.png" />
+
+Localmente, você pode efetuar quantos commits achar necessário.
+
+3 - Após encerrar as modificações, efetuar os testes e validar o resultado da alteração, efetue o commit no
+repositório remoto (GitHub). Para isso, clique com o botão direito do mouse no projeto, e selecione
+"Team > Remote > Push..."
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes-03.png" />
+
+4 - Selecione o repositório remoto. Neste caso, existe apenas um (origin). Deixe como está e clique em "next"
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes-04.png" />
+
+5 - Em "Source ref", selecione o branch local phase-01. Em "Destination ref", selecione o branch remoto "phase-01".
+Clique em "Add Spec". Feito isso, clique em "next".
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes-05.png" />
+
+6 - A próxima tela é uma simulação do commit no repositório remoto. Estando tudo OK, como exibido na imagem 
+abaixo, clique em "Finish"
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/commitando-alteracoes-06.png" />
+
+
+<b>IMPORTANTE</b>: Lembre-se de que, antes de realizar um commit no repositório remoto, você deve deixar o 
+projeto num estado compilável, ou seja, <b>não deixe erros de compilação no projeto</b>! Além disso, lembre-se 
+(novamente) de que cada commit é identificado com o login do usuário.
+
+Atualizando branch local
+===================================================
+
+Atente-se para o fato de que outras equipes estão efetuando alterações no mesmo branch, e possivelmente estas 
+alterações podem alterar arquivos nos quais você está trabalhando. Deste modo, atualize o seu branch local, clicando
+com o botão direito do mouse no projeto, e selecionando "Team > Pull".
+
+<img src="https://raw.github.com/sfohart/jabref-2.9.2/master/doc/atualizando-branch-local.png" />
+
+O GIT, em muitos casos, efetua o merge dos arquivos de código fonte de modo automático. Isso acontece normalmente 
+em casos onde há modificações no mesmo arquivo, porém, em regiões diferentes. Quando as modificações ocorrem na mesma
+região de um arquivo, o git apresenta tais modificações como abaixo:
+
+<img src="http://eclipsesource.com/blogs/wp-content/uploads/2011/05/screenshot_085.png" />
+
+Suas alterações estarão entre
+
+```
+<<<<<<<HEAD
+=======
+```
+
+As alterações conflitantes no repositório remoto se encontrarão entre um código semelhante ao abaixo
+
+```
+=======
+>>>>>>>refs/head/xpto
+```
+
+Analise o que deve ser alterado e remova AMBAS as marcações. Feito isso, adicione o arquivo ao índice do git 
+(veja seção <i>Commitando alterações</i>). Resolvidos todos os conflitos, commite os arquivos no seu 
+repositório local.
