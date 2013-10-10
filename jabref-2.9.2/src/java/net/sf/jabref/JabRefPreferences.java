@@ -927,13 +927,13 @@ public class JabRefPreferences {
     private void defineDefaultKeyBindings() {
         defKeyBinds.put("Push to application","ctrl L");
       defKeyBinds.put("Push to LyX","ctrl L");
-      defKeyBinds.put("Push to WinEdt","ctrl shift W");
+      defKeyBinds.put("Push to WinEdt","ctrl W");
         defKeyBinds.put("Quit JabRef", "ctrl Q");
         defKeyBinds.put("Open database", "ctrl O");
         defKeyBinds.put("Save database", "ctrl S");
         defKeyBinds.put("Save database as ...", "ctrl shift S");
         defKeyBinds.put("Save all", "ctrl alt S");
-        defKeyBinds.put("Close database", "ctrl W");
+        defKeyBinds.put("Close database", "ctrl shift W");
         defKeyBinds.put("New entry", "ctrl N");
         defKeyBinds.put("Cut", "ctrl X");
         defKeyBinds.put("Copy", "ctrl C");
