@@ -640,7 +640,7 @@ public class JabRef {
             // * Look first into the Preferences
             // * Fallback to the System Look & Fell
             if (Globals.prefs.getBoolean("useDefaultLookAndFeel")) {
-                systemLnF = UIManager.getSystemLookAndFeelClassName();
+                systemLnF = UIManager.getSystemLookAndFeelClassName(); //MUDANCA 1 do grupo 2
             } else {
                 systemLnF = Globals.prefs.get("lookAndFeel");
             }
