@@ -383,7 +383,7 @@ public class BibtexEntry
         if (o != null) {
             if (isFirst)
                 out.write(","+Globals.NEWLINE);
-            out.write("  "+name+" = ");
+            out.write("\t"+name+" = ");
 
             try {
                 out.write(ff.format(o.toString(), name));
